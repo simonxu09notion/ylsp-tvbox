@@ -1,9 +1,7 @@
 {
-  "functions": {
-    "api/index.py": {
-      "runtime": "@vercel/python@3"
-    }
-  },
+  "rewrites": [
+    { "source": "/", "destination": "/api" }
+  ],
   "github": {
     "silent": true
   }
