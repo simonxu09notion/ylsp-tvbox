@@ -5,7 +5,7 @@
       "key": "ylsp_online",
       "name": "永乐视频(在线·动态接口)",
       "type": "json",
-      "api": "https://<你的Vercel项目名>.vercel.app/",
+      "api": "https://ylsp-tvbox.vercel.app/",
       "searchable": 1,
       "quickSearch": 1,
       "filterable": 0,
