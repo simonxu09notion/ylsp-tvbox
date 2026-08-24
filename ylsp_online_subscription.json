@@ -4,7 +4,7 @@
     {
       "key": "ylsp_online",
       "name": "永乐视频(在线·动态接口)",
-      "type": "json",
+      "type": 0,
       "api": "https://ylsp-tvbox.vercel.app/",
       "searchable": 1,
       "quickSearch": 1,
@@ -14,7 +14,7 @@
     {
       "key": "ylsp_ghpages",
       "name": "永乐视频(在线·GitHub静态)",
-      "type": "json",
+      "type": 0,
       "api": "https://simonxu09notion.github.io/ylsp-tvbox/api.json",
       "searchable": 1,
       "quickSearch": 1,
