@@ -1,0 +1,27 @@
+{
+  "spider": "",
+  "sites": [
+    {
+      "key": "ylsp_online",
+      "name": "永乐视频(在线·动态接口)",
+      "type": "json",
+      "api": "https://<你的Vercel项目名>.vercel.app/",
+      "searchable": 1,
+      "quickSearch": 1,
+      "filterable": 0,
+      "ext": ""
+    },
+    {
+      "key": "ylsp_ghpages",
+      "name": "永乐视频(在线·GitHub静态)",
+      "type": "json",
+      "api": "https://simonxu09notion.github.io/ylsp-tvbox/api.json",
+      "searchable": 1,
+      "quickSearch": 1,
+      "filterable": 0,
+      "ext": ""
+    }
+  ],
+  "parges": [],
+  "lives": []
+}
