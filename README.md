@@ -3,6 +3,11 @@
 把 [ylsp.lv](https://www.ylsp.lv) 的视频（分类 / 列表 / 真实 m3u8 播放地址）解析为标准
 **TVBOX / 影视仓 在线接口源（MacCMS JSON）**，并提供了两套托管方案，全部代码都在本仓库、可直接部署到 GitHub。
 
+> ⚠️ **关于 `.github/workflows/` 文件**：GitHub REST API 出于安全工作流注入防护，**禁止通过接口写入 `.github/workflows/` 目录**，因此本仓库目前**未包含** `deploy.yml` / `refresh.yml`（它们只存在于你本地的 `ylsp-github/.github/workflows/`）。
+> 补齐方式（任选其一）：
+> - **A 方案（Vercel）不受影响**：直接导入本仓库即可，无需 workflow 文件。
+> - **B 方案（GitHub Pages 自动部署）需补齐**：在 GitHub 网页「Add file → Create new file」路径填 `.github/workflows/deploy.yml` 粘贴本地该文件内容；或在你**本地有 git 的环境**执行 `git push`（本地仓库已含全部 10 个文件，含 workflow）。
+
 ## 两种在线接口（选其一，或都留着切换）
 
 | 方案 | 地址形态 | 能力 | 部署方式 |
@@ -44,8 +49,9 @@ git push -u origin main
 ```
 
 ### 启用 B（GitHub Pages 静态）
-仓库 → **Settings → Pages → Build and deployment → Source 选择 "GitHub Actions"**。
-推送后 `deploy.yml` 会自动构建并发布；地址即 `https://<用户名>.github.io/<仓库>/api.json`。
+有两种方式：
+- **方式 1（推荐，无需 workflow）**：仓库 → **Settings → Pages → Build and deployment → Source 选 "Deploy from a branch" → 选 `main` 分支 + 目录 `/public`**。保存后 `public/api.json` 即发布到 `https://<用户名>.github.io/<仓库>/api.json`（无需 Actions，`deploy.yml` 不是必须）。
+- **方式 2（自动化）**：先把上文的 `deploy.yml` 补进 `.github/workflows/`（见顶部说明），再选 **Source = "GitHub Actions"**，推送后自动构建发布。
 
 ### 启用 A（Vercel 动态接口，推荐）
 1. 打开 https://vercel.com → **Add New → Project** → 导入上面的 GitHub 仓库。
